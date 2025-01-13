@@ -146,7 +146,7 @@ function App() {
                   className={`bg-blue-900 text-white block mb-3 w-96 h-9 ${
                     answered
                       ? option.correct
-                        ? "bg-blue-600"
+                        ? "bg-green-800"
                         : selectedAnswer === index
                         ? "bg-red-700"
                         : ""
