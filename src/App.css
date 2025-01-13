@@ -16,3 +16,11 @@ body {
     height: 100%;
   }
 }
+@media (max-width: 520px) {
+  .container-div {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    height: 100vh;
+  }
+}

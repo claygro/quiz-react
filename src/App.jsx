@@ -126,24 +126,24 @@ function App() {
   };
   return (
     <>
-      <div className=" h-screen   flex justify-center items-center ">
-        <div className="container-div bg-white bg-opacity-25 px-12 py-20 rounded-lg border border-black">
-          <div className="flex justify-center ">
-            <h1 className="text-xl">Quiz</h1>
+      <div className="container-div h-screen flex justify-center items-center px-4 md:px-0">
+        <div className=" bg-white bg-opacity-25 px-6 py-10 md:px-12 md:py-20 rounded-lg border border-black w-full max-w-lg">
+          <div className="flex justify-center mb-4">
+            <h1 className="text-xl md:text-2xl">Quiz</h1>
           </div>
           {showScore ? (
-            <div>
-              You score {score} of {questions.length}
+            <div className="text-center">
+              You scored {score} out of {questions.length}
             </div>
           ) : (
-            <div>
-              <div className="text-center whitespace-pre-wrap">
+            <section className="options-div">
+              <div className="text-center whitespace-pre-wrap mb-4">
                 {questions[currentQuestion].question}
               </div>
               {questions[currentQuestion].answers.map((option, index) => (
                 <button
                   onClick={() => handleAnswer(index, option.correct)}
-                  className={`bg-blue-900 text-white block mb-3 w-96 h-9 ${
+                  className={`bg-blue-900 text-white block mb-3 w-full h-9 md:w-96 ${
                     answered
                       ? option.correct
                         ? "bg-green-800"
@@ -157,7 +157,7 @@ function App() {
                   {option.Text}
                 </button>
               ))}
-              <div className="flex justify-center ">
+              <div className="flex justify-center mt-4">
                 <button
                   className="bg-blue-800 text-white text-xl rounded-lg cursor-pointer hover:bg-blue-700 active:bg-blue-900 py-3 px-8"
                   disabled={answered ? "" : "disabled"}
@@ -166,10 +166,10 @@ function App() {
                   Next
                 </button>
               </div>
-              <p className="text-center text-gray-200">
+              <p className="text-center text-gray-200 mt-4">
                 Question {currentQuestion + 1} of {questions.length}
               </p>
-            </div>
+            </section>
           )}
         </div>
       </div>
